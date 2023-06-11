@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 import searchIcon from "../assets/images/search.png";
 
-const DictionaryCard: React.FC<DictionaryComponentProps> = ({onSearch , searchResults}) => {
+const DictionaryCard: React.FC<DictionaryComponentProps> = ({onSearch , searchResults, notFound}) => {
   const formRef = useRef<HTMLFormElement>(null);
 
   const handleSearch = (event: React.FormEvent<HTMLFormElement>) => {
@@ -54,6 +54,9 @@ const DictionaryCard: React.FC<DictionaryComponentProps> = ({onSearch , searchRe
           </div>
           )
         })}
+        {notFound!=="" && (
+          <p className="text-center text-[#c4c4c4]">{notFound}</p>
+        )}
       <p className="mt-8 text-center text-[#c4c4c4]">Type any existing word and press enter to get meaning, example, synonyms, etc.</p>
     </div>
     </>

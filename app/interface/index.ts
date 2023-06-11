@@ -6,6 +6,7 @@ export interface Word{
 }
 export interface DictionaryComponentProps {
     onSearch: (query: string) => void,
-    searchResults: Word[]
+    searchResults: Word[],
+    notFound: string
   }
   
